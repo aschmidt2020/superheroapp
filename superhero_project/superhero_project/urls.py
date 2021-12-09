@@ -1,4 +1,4 @@
-"""superheroes URL Configuration
+"""superhero_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('superheroes/', include('superheroes.urls'))
+    path('superheroes/', include('superheroes.urls')),
+    path('', RedirectView.as_view(url='/superheroes/index/'))
 ]
