@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang ="eng">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Superhero Index</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h2>Are you sure you want to delete?<h1>
+        <form action ="" method="post">
+            {% csrf_token %}
+            <input class="btn btn-danger" type="submit" value="Yes">
+        </form>
+
+        <a href="{% url 'superheroes:index' %}">Cancel - Back to Home</a>
+    </body>
+</html>
