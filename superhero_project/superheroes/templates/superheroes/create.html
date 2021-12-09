@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang ="eng">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Superhero Index</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h2>Create New Hero<h1>
+        <form action ="{% url 'superheroes:create' %}" method="post">
+            {% csrf_token %}
+            Name: <input type="text" name="name" id="name"><br>
+            Alter Ego: <input type="text" name="alter_ego" id="alter_ego"><br>
+            Primary Ability: <input type="text" name="primary_ability" id="primary_ability"><br>
+            Secondary Ability: <input type="text" name="secondary_ability" id="secondary_ability"><br>
+            Catchphrase: <input type="text" name="catchphrase" id="catchphrase"><br>
+            <input type="submit" value="Add!">
+        </form>
+    </body>
+</html>
