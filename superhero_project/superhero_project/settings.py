@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'superheroes.urls'
+ROOT_URLCONF = 'superhero_project.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'superheroes.wsgi.application'
+WSGI_APPLICATION = 'superhero_project.wsgi.application'
 
 
 # Database
