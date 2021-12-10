@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from villains.models import Villain
 from superheroes.models import Superhero
 
 # Create your views here.
@@ -22,7 +23,8 @@ def create(request):
         primary_ability = request.POST.get('primary_ability')
         secondary_ability = request.POST.get('secondary_ability')
         catchphrase = request.POST.get('catchphrase')
-        villain = request.POST.get('villain')
+        villain_name = request.POST.get('villain')
+        villain = Villain.objects.get(name=villain_name)
         
         new_hero = Superhero(name=name, alter_ego=alter_ego, primary_ability=primary_ability, secondary_ability=secondary_ability, 
                              catchphrase=catchphrase, villain=villain)
@@ -55,6 +57,7 @@ def update(request, hero_id):
         single_hero.primary_ability = request.POST.get('primary_ability')
         single_hero.secondary_ability = request.POST.get('secondary_ability')
         single_hero.catchphrase = request.POST.get('catchphrase')
+        single_hero.villain = request.POST.get('villain')
 
         single_hero.save()
         

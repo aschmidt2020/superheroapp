@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.fields import CharField
+from django.db.models.fields import CharField, NullBooleanField
 
 from villains.models import Villain
 
@@ -13,7 +13,7 @@ class Superhero(models.Model):
     primary_ability = models.CharField(max_length=50)
     secondary_ability = models.CharField(max_length=50)
     catchphrase = models.CharField(max_length=50)
-    villain = models.ForeignKey(Villain, default=None, on_delete=models.CASCADE)
+    villain = models.ForeignKey(Villain, default=None, on_delete=models.SET_NULL, blank=True, null=True)
     
     def __str__(self):
         return self.name
