@@ -11,12 +11,25 @@
         <link rel="stylesheet" href="{% static 'styles.css'%}">
     </head>
     <body>
-        <h2>Are you sure you want to delete?<h1>
-        <form action ="" method="post">
-            {% csrf_token %}
-            <input class="btn btn-danger" type="submit" value="Yes">
-        </form>
+        <div class="container-fluid">
+            <div class="row">
+                <p class="delete-confirm">Are you sure you want to delete?</p>
+            </div>
 
-        <a href="{% url 'superheroes:index' %}">Cancel - Back to Home</a>
+            <div class="row">
+                <form action ="" method="post">
+                    {% csrf_token %}
+                    <input class="btn btn-danger" type="submit" value="Yes"> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{% url 'superheroes:index' %}">Cancel</a>
+                </form>
+    
+        </div>
+
+        <div class="row">
+            <p><a class="button" href="{% url 'superheroes:index' %}">Back to Home</a></p>
+        </div>
+    </div>
+
     </body>
 </html>

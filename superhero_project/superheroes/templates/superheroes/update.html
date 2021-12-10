@@ -11,17 +11,26 @@
         <link rel="stylesheet" href="{% static 'styles.css'%}">
     </head>
     <body>
-        <h2>Update Hero<h1>
-            <form action ="" method="post">
-                {% csrf_token %}
-                Name: <input type="text" name="name" id="name" value="{{single_hero.name}}"><br>
-                Alter Ego: <input type="text" name="alter_ego" id="alter_ego" value="{{single_hero.alter_ego}}"><br>
-                Primary Ability: <input type="text" name="primary_ability" id="primary_ability" value="{{single_hero.primary_ability}}"><br>
-                Secondary Ability: <input type="text" name="secondary_ability" id="secondary_ability" value="{{single_hero.secondary_ability}}"><br>
-                Catchphrase: <input type="text" name="catchphrase" id="catchphrase" value="{{single_hero.catchphrase}}"><br>
-                <input type="submit" value="Update!">
-            </form>
+        <div class="container-fluid">
+            <div class="row">
+                <h1 class="page-header">Update Superhero</h1>
+            </div>
 
-        <a href="{% url 'superheroes:index' %}">Cancel - Back to Home</a>
+            <div class="row">
+                <form action ="" method="post">
+                    {% csrf_token %}
+                    <h1 class="details-page">Name: <input type="text" name="name" id="name" value="{{single_hero.name}}"><br></h1>
+                    <h1 class="details-page">Alter Ego: <input type="text" name="alter_ego" id="alter_ego" value="{{single_hero.alter_ego}}"><br></h1>
+                    <h1 class="details-page">Primary Ability: <input type="text" name="primary_ability" id="primary_ability" value="{{single_hero.primary_ability}}"><br></h1>
+                    <h1 class="details-page">Secondary Ability: <input type="text" name="secondary_ability" id="secondary_ability" value="{{single_hero.secondary_ability}}"><br></h1>
+                    <h1 class="details-page">Catchphrase: <input type="text" name="catchphrase" id="catchphrase" value="{{single_hero.catchphrase}}"><br></h1>
+                    <input type="submit" value="Update!">
+                </form>
+            </div>
+
+            <div class="row">
+                <p><a class="button" href="{% url 'superheroes:index' %}">Cancel - Back to Home</a></p>
+            </div>
+          </div>
     </body>
 </html>

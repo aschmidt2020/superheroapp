@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="{% static 'styles.css'%}">
     </head>
     <body>
-        <h2>Create New Hero<h1>
+        <h1>Create New Hero<h1>
         <form action ="{% url 'superheroes:create' %}" method="post">
             {% csrf_token %}
             Name: <input type="text" name="name" id="name"><br>

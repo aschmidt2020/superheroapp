@@ -10,16 +10,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'styles.css'%}">
     </head>
-    <body>
-        <h2>Superhero Details<h1>
-        <ul>
-            <li><h1> Name: {{single_hero.name}}</h1></li>
-            <li><h1> Alter Ego: {{single_hero.alter_ego}}</h1></li>
-            <li><h1> Primary Ability: {{single_hero.primary_ability}}</h1></li>
-            <li><h1> Secondary Ability: {{single_hero.secondary_ability}}</h1></li>
-            <li><h1> Catchphrase: {{single_hero.catchphrase}}</h1></li>
-        </ul>
 
-        <a href="{% url 'superheroes:index' %}">Back to Home</a>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <h1 class="page-header">Superhero Details</h1>
+            </div>
+
+            <div class="row">
+            <ul>
+                <li><h1 class="details-page"> Name: {{single_hero.name}}</h1></li>
+                <li><h1 class="details-page"> Alter Ego: {{single_hero.alter_ego}}</h1></li>
+                <li><h1 class="details-page"> Primary Ability: {{single_hero.primary_ability}}</h1></li>
+                <li><h1 class="details-page"> Secondary Ability: {{single_hero.secondary_ability}}</h1></li>
+                <li><h1 class="details-page"> Catchphrase: {{single_hero.catchphrase}}</h1></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <p><a class="button" href="{% url 'superheroes:index' %}">Back to Home</a></p>
+        </div>
+    </div>
     </body>
 </html>

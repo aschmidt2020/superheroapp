@@ -1,6 +1,45 @@
 body {
     background-image: url(/static/hulkwallpaper.jpg);
 }
-h1 {
-    background-color: aqua;
+
+.page-header {
+    background-color: #4CAF50;
+    font-size: 60px;
+    color: white;
+    margin-top: 10%;
 }
+
+.details-page{
+    font-size: 40px;
+    color: white;
+}
+a, li a {
+    color: #d3d3d3;
+    font-size: 15px;
+}
+
+li {
+    color: white;
+    font-size: 45px;
+}
+
+p{
+    text-align: center;
+    color: white;
+}
+
+.delete-confirm{
+    text-align: left;
+    color: white;
+    font-size: 25px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
