@@ -21,6 +21,7 @@
             <ul>
                 <li><h1 class="details-page"> Name: {{single_villain.name}}</h1></li>
                 <li><h1 class="details-page"> Superpower: {{single_villain.superpower}}</h1></li>
+                <a href="{% url 'villains:update' single_villain.id  %}">Update</a>
 
             </ul>
         </div>

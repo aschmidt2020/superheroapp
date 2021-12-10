@@ -23,3 +23,19 @@ def detail(request, villain_id):
     single_villain = Villain.objects.get(pk=villain_id)
     context = {'single_villain': single_villain}
     return render (request, 'villains/detail.html', context)
+
+def update(request, villain_id):
+    if request.method == "POST":
+        single_villain = Villain.objects.get(pk=villain_id)
+        
+        single_villain.name = request.POST.get('name')
+        single_villain.superpower = request.POST.get('superpower')
+
+        single_villain.save()
+        
+        return HttpResponseRedirect(reverse('superheroes:index'))
+    
+    else:
+        single_villain = Villain.objects.get(pk=villain_id)
+        context = {'single_villain': single_villain}
+        return render (request, 'villains/update.html', context)
