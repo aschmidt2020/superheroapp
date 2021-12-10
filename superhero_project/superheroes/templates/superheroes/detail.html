@@ -28,9 +28,9 @@
                     {% if single_hero.villain is not None %}
                     <a href="{% url 'villains:detail' single_hero.villain.id  %}">View Details</a>
                     {% endif %}
-                    
                     </h1></li>
             </ul>
+            <p><a class="button" href="{% url 'superheroes:update' single_hero.id %}">Update Hero</a></p>
         </div>
 
         <div class="row">
