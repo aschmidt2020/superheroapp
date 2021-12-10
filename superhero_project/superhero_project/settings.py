@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'superhero_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'superhero_database',
+        'NAME': 'superhero_project',
         'USER': 'root',
         'PASSWORD': 'Password1234!',
         'HOST': '127.0.0.1',
