@@ -12,9 +12,11 @@
         <h2>List of Superheroes<h1>
         <ul>
             {% for hero in all_heroes %}
-            <li><h1>{{hero.name}} <a href="{% url 'superheroes:detail' hero.id %}">View Details</a> <a href="{% url 'superheroes:delete' hero.id %}">Delete Hero</a></h1></li> 
+            <li><h1>{{hero.name}}
+                <a href="{% url 'superheroes:detail' hero.id %}">View Details</a> 
+                <a href="{% url 'superheroes:update' hero.id %}">Update</a>
+                <a href="{% url 'superheroes:delete' hero.id %}">Delete Hero</a></h1></li> 
             {% endfor %}
-            <li>
         </ul>
         <a href="{% url 'superheroes:create' %}">Create New Superhero</a>
     </body>

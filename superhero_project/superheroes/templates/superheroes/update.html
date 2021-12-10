@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang ="eng">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Superhero Index</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h2>Update Hero<h1>
+            <form action ="" method="post">
+                {% csrf_token %}
+                Name: <input type="text" name="name" id="name" value="{{single_hero.name}}"><br>
+                Alter Ego: <input type="text" name="alter_ego" id="alter_ego" value="{{single_hero.alter_ego}}"><br>
+                Primary Ability: <input type="text" name="primary_ability" id="primary_ability" value="{{single_hero.primary_ability}}"><br>
+                Secondary Ability: <input type="text" name="secondary_ability" id="secondary_ability" value="{{single_hero.secondary_ability}}"><br>
+                Catchphrase: <input type="text" name="catchphrase" id="catchphrase" value="{{single_hero.catchphrase}}"><br>
+                <input type="submit" value="Update!">
+            </form>
+
+        <a href="{% url 'superheroes:index' %}">Cancel - Back to Home</a>
+    </body>
+</html>
