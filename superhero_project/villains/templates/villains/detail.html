@@ -21,8 +21,8 @@
             <ul>
                 <li><h1 class="details-page"> Name: {{single_villain.name}}</h1></li>
                 <li><h1 class="details-page"> Superpower: {{single_villain.superpower}}</h1></li>
-                <a href="{% url 'villains:update' single_villain.id  %}">Update</a>
-                <a href="{% url 'villains:delete' single_villain.id %}">Delete</a> 
+                <a class="button" href="{% url 'villains:update' single_villain.id  %}">Update</a>
+                <a class="button" href="{% url 'villains:delete' single_villain.id %}">Delete</a> 
 
             </ul>
         </div>
