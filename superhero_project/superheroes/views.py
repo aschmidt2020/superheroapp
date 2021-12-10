@@ -57,7 +57,8 @@ def update(request, hero_id):
         single_hero.primary_ability = request.POST.get('primary_ability')
         single_hero.secondary_ability = request.POST.get('secondary_ability')
         single_hero.catchphrase = request.POST.get('catchphrase')
-        single_hero.villain = request.POST.get('villain')
+        villain_name = request.POST.get('villain')
+        single_hero.villain = Villain.objects.get(name=villain_name)
 
         single_hero.save()
         
