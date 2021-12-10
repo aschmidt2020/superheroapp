@@ -17,7 +17,7 @@
             </div>
 
             <div class="row">
-                <form action ="" method="post">
+                <form action ="{% url 'superheroes:update' single_hero.id %}" method="post">
                     {% csrf_token %}
                     <h1 class="details-page">Name: <input type="text" name="name" id="name" value="{{single_hero.name}}"><br></h1>
                     <h1 class="details-page">Alter Ego: <input type="text" name="alter_ego" id="alter_ego" value="{{single_hero.alter_ego}}"><br></h1>

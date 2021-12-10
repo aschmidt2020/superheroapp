@@ -17,10 +17,10 @@
             </div>
 
             <div class="row">
-                <form action ="" method="post">
+                <form action ="{% url 'superheroes:delete' single_hero.id %}" method="post">
                     {% csrf_token %}
                     <input class="btn btn-danger" type="submit" value="Yes"> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- adding space between yes and cancel -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="{% url 'superheroes:index' %}">Cancel</a>
                 </form>
     
