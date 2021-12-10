@@ -21,6 +21,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('superheroes/', include('superheroes.urls')),
+    path('villains/', include('villains.urls')),
     path('', RedirectView.as_view(url='/superheroes/index/'))
 ]
 

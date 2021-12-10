@@ -13,18 +13,14 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <h1 class="page-header">Create New Hero</h1>
+                <h1 class="page-header">Create New Villain</h1>
             </div>
 
             <div class="row">
-                <form action ="{% url 'superheroes:create' %}" method="post">
+                <form action ="{% url 'villains:create' %}" method="post">
                     {% csrf_token %}
                     <h1 class="details-page">Name: <input type="text" name="name" id="name"><br></h1>
-                    <h1 class="details-page">Alter Ego: <input type="text" name="alter_ego" id="alter_ego"><br></h1>
-                    <h1 class="details-page">Primary Ability: <input type="text" name="primary_ability" id="primary_ability"><br></h1>
-                    <h1 class="details-page">Secondary Ability: <input type="text" name="secondary_ability" id="secondary_ability"><br></h1>
-                    <h1 class="details-page">Catchphrase: <input type="text" name="catchphrase" id="catchphrase"><br></h1>
-                    <h1 class="details-page">Villain: <input type="text" name="villain" id="vilain"><br></h1>
+                    <h1 class="details-page">Superpower: <input type="text" name="superpower" id="superpower"><br></h1>
                     <input type="submit" value="Add!">
                 </form>
         </div>

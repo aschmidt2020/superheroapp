@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang ="eng">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Superhero Index</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'styles.css'%}">
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <h1 class="page-header">Villain Details</h1>
+            </div>
+
+            <div class="row">
+            <ul>
+                <li><h1 class="details-page"> Name: {{single_villain.name}}</h1></li>
+                <li><h1 class="details-page"> Superpower: {{single_villain.superpower}}</h1></li>
+
+            </ul>
+        </div>
+
+        <div class="row">
+            <p><a class="button" href="{% url 'superheroes:index' %}">Back to Home</a></p>
+        </div>
+    </div>
+    </body>
+</html>

@@ -24,6 +24,9 @@
                 <li><h1 class="details-page"> Primary Ability: {{single_hero.primary_ability}}</h1></li>
                 <li><h1 class="details-page"> Secondary Ability: {{single_hero.secondary_ability}}</h1></li>
                 <li><h1 class="details-page"> Catchphrase: {{single_hero.catchphrase}}</h1></li>
+                <li><h1 class="details-page"> Villain: {{single_hero.villain}}
+                    <a href="{% url 'villains:detail' single_hero.villain.id  %}">View Details</a>
+                    </h1></li>
             </ul>
         </div>
 
