@@ -15,17 +15,16 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <h1 class="page-header">List of Superheroes</h1>
+                <h1 class="page-header">List of Villains</h1>
             </div>
 
             <div class="row">
               <div class="col-8">
                     <ul>
-                        {% for hero in all_heroes %}
-                        <li><h1>{{hero.name}}
-                            <a href="{% url 'superheroes:detail' hero.id %}">View Details</a> 
-                            <a href="{% url 'superheroes:update' hero.id %}">Update</a>
-                            <a href="{% url 'superheroes:delete' hero.id %}">Delete Hero</a></h1></li> 
+                        {% for villain in all_villains %}
+                        <li><h1>{{villain.name}}
+                            <a href="{% url 'villains:detail' villain.id %}">View Details</a> 
+                            <a href="{% url 'villains:delete' villain.id %}">Delete</a> 
                         {% endfor %}
                     </ul>
               </div>
@@ -36,10 +35,7 @@
             </div>
 
             <div class="row">
-                <p><a class="button" href="{% url 'villains:index' %}">View All Villians</a>
-                    <a class="button" href="{% url 'superheroes:create' %}">Create New Superhero</a>
-                    <a class="button" href="{% url 'villains:create' %}">Create New Villain</a>
-                </p>
+                <p><a class="button" href="{% url 'superheroes:index' %}">Back to Home</a></p>
             </div>
           </div>
 

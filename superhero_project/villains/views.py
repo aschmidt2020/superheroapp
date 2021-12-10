@@ -4,6 +4,11 @@ from django.urls import reverse
 from villains.models import Villain
 
 # Create your views here.
+def index(request):
+    all_villains = Villain.objects.all()
+    context = {'all_villains': all_villains}
+    return render(request, 'villains/index.html', context)
+
 def create(request):
     if request.method == "POST":
         #save the form contents as a new db object by instantiating new hero
@@ -39,3 +44,15 @@ def update(request, villain_id):
         single_villain = Villain.objects.get(pk=villain_id)
         context = {'single_villain': single_villain}
         return render (request, 'villains/update.html', context)
+
+def delete(request, villain_id):
+    if request.method == "POST":
+        single_villain = Villain.objects.get(pk=villain_id)
+        single_villain.delete()
+    
+        return HttpResponseRedirect(reverse('superheroes:index'))
+    
+    else:
+        single_villain = Villain.objects.get(pk=villain_id)
+        context = {'single_villain': single_villain}
+        return render (request, 'villains/delete.html', context)

@@ -10,26 +10,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'styles.css'%}">
     </head>
-
     <body>
         <div class="container-fluid">
             <div class="row">
-                <h1 class="page-header">Villain Details</h1>
+                <p class="delete-confirm">Are you sure you want to delete?</p>
             </div>
 
             <div class="row">
-            <ul>
-                <li><h1 class="details-page"> Name: {{single_villain.name}}</h1></li>
-                <li><h1 class="details-page"> Superpower: {{single_villain.superpower}}</h1></li>
-                <a href="{% url 'villains:update' single_villain.id  %}">Update</a>
-                <a href="{% url 'villains:delete' single_villain.id %}">Delete</a> 
-
-            </ul>
+                <form action ="{% url 'villains:delete' single_villain.id %}" method="post">
+                    {% csrf_token %}
+                    <input class="btn btn-danger" type="submit" value="Yes"> 
+                    <!-- adding space between yes and cancel -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{% url 'superheroes:index' %}">Cancel</a>
+                </form>
+    
         </div>
 
         <div class="row">
             <p><a class="button" href="{% url 'superheroes:index' %}">Back to Home</a></p>
         </div>
     </div>
+
     </body>
 </html>
