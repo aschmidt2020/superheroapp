@@ -24,7 +24,7 @@ def create(request):
         secondary_ability = request.POST.get('secondary_ability')
         catchphrase = request.POST.get('catchphrase')
         villain_name = request.POST.get('villain')
-        if villain_name == None:
+        if villain_name == 'None':
             new_hero = Superhero(name=name, alter_ego=alter_ego, primary_ability=primary_ability, secondary_ability=secondary_ability, 
                         catchphrase=catchphrase, villain=None)
             new_hero.save()
@@ -65,7 +65,7 @@ def update(request, hero_id):
         single_hero.catchphrase = request.POST.get('catchphrase')
         villain_name = request.POST.get('villain')
         
-        if villain_name == None:
+        if villain_name == 'None':
             single_hero.villain = None
             single_hero.save()
         else:

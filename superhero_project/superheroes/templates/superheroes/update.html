@@ -29,6 +29,7 @@
                             {% for villain in all_villains %}
                             <option><h1>{{villain.name}}</option></h1>
                             {% endfor %}
+                            <option><h1>None</option></h1>
                         </select>
                         <a href="{% url 'villains:create' %}" >Create New Villain </a></h1>
                     <input type="submit" value="Update!">
