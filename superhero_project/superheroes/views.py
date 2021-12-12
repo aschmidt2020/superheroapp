@@ -24,17 +24,23 @@ def create(request):
         secondary_ability = request.POST.get('secondary_ability')
         catchphrase = request.POST.get('catchphrase')
         villain_name = request.POST.get('villain')
-        villain = Villain.objects.get(name=villain_name)
-        
-        new_hero = Superhero(name=name, alter_ego=alter_ego, primary_ability=primary_ability, secondary_ability=secondary_ability, 
+        if villain_name == None:
+            new_hero = Superhero(name=name, alter_ego=alter_ego, primary_ability=primary_ability, secondary_ability=secondary_ability, 
+                        catchphrase=catchphrase, villain=None)
+            new_hero.save()
+        else:
+            villain = Villain.objects.get(name=villain_name)
+            new_hero = Superhero(name=name, alter_ego=alter_ego, primary_ability=primary_ability, secondary_ability=secondary_ability, 
                              catchphrase=catchphrase, villain=villain)
-        new_hero.save()
+            new_hero.save()
         
         #return to index.html
         return HttpResponseRedirect(reverse('superheroes:index'))
         
     else:
-        return render(request, 'superheroes/create.html')
+        all_villains = Villain.objects.all()
+        context = {'all_villains': all_villains}
+        return render(request, 'superheroes/create.html', context)
 
 def delete(request, hero_id):
     if request.method == "POST":
@@ -58,14 +64,20 @@ def update(request, hero_id):
         single_hero.secondary_ability = request.POST.get('secondary_ability')
         single_hero.catchphrase = request.POST.get('catchphrase')
         villain_name = request.POST.get('villain')
-        single_hero.villain = Villain.objects.get(name=villain_name)
-
-        single_hero.save()
+        
+        if villain_name == None:
+            single_hero.villain = None
+            single_hero.save()
+        else:
+            single_hero.villain = Villain.objects.get(name=villain_name)
+            single_hero.save()
         
         return HttpResponseRedirect(reverse('superheroes:index'))
     
     else:
         single_hero = Superhero.objects.get(pk=hero_id)
-        context = {'single_hero': single_hero}
+        all_villains = Villain.objects.all()
+        context = {'single_hero': single_hero,
+                   'all_villains': all_villains}
         return render (request, 'superheroes/update.html', context)
         

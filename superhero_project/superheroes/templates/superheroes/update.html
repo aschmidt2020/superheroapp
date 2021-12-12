@@ -24,7 +24,12 @@
                     <h1 class="details-page">Primary Ability: <input type="text" name="primary_ability" id="primary_ability" value="{{single_hero.primary_ability}}"><br></h1>
                     <h1 class="details-page">Secondary Ability: <input type="text" name="secondary_ability" id="secondary_ability" value="{{single_hero.secondary_ability}}"><br></h1>
                     <h1 class="details-page">Catchphrase: <input type="text" name="catchphrase" id="catchphrase" value="{{single_hero.catchphrase}}"><br></h1>
-                    <h1 class="details-page">Villain: <input type="text" name="villain" id="vilain" value="{{single_hero.villain}}"><br></h1>
+                    <h1 class="details-page">Villain: 
+                        <select name="villain" id="villain"><br></h1>
+                            {% for villain in all_villains %}
+                            <option><h1>{{villain.name}}</option></h1>
+                            {% endfor %}
+                        </select>
                     <input type="submit" value="Update!">
                 </form>
             </div>
