@@ -24,7 +24,8 @@
                         {% for villain in all_villains %}
                         <li><h1>{{villain.name}}
                             <a href="{% url 'villains:detail' villain.id %}">View Details</a> 
-                            <a href="{% url 'villains:delete' villain.id %}">Delete</a> 
+                            <a href="{% url 'villains:delete' villain.id %}" target="popup" onClick="window.open('{% url 'villains:delete' villain.id %}','popup','width=400, height=150, top=500, left=500')">
+                                Delete</a></h1></li>
                         {% endfor %}
                     </ul>
               </div>

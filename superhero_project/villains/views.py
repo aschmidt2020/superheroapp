@@ -47,11 +47,14 @@ def update(request, villain_id):
 
 def delete(request, villain_id):
     if request.method == "POST":
-        single_villain = Villain.objects.get(pk=villain_id)
-        single_villain.delete()
-    
-        return HttpResponseRedirect(reverse('superheroes:index'))
-    
+        delete = request.POST.get('Delete')
+        if delete == 'Yes':
+            single_villain = Villain.objects.get(pk=villain_id)
+            single_villain.delete()
+            return HttpResponse('<script type="text/javascript">window.close(); window.opener.location.reload();</script>')
+        
+        else:
+            return HttpResponse('<script type="text/javascript">window.close();</script>')
     else:
         single_villain = Villain.objects.get(pk=villain_id)
         context = {'single_villain': single_villain}

@@ -12,16 +12,16 @@
     </head>
     <body>
         <div class="container-fluid">
-            <div class="row">
-                <p class="delete-confirm">Are you sure you want to delete?</p>
+            <div class="row center">
+                <p class="delete-confirm center">Are you sure you want to delete?</p>
             </div>
 
             <div class="row">
                 <form action ="{% url 'superheroes:delete' single_hero.id %}" method="post">
                     {% csrf_token %}
-                    <input class="btn btn-danger button" type="submit" value="Yes" name="Delete" id='Delete'>
+                    <input class="btn btn-danger button center" type="submit" value="Yes" name="Delete" id='Delete'>
                     <!-- adding space between yes and cancel -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input class="btn btn" type="submit" value="No" name="Delete" id='Cancel'>
+                    <input class="btn btn-danger button center" type="submit" value="No" name="Delete" id='Cancel'>
                 </form>
 
     </div>

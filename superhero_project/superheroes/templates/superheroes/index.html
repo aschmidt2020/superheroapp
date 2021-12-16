@@ -26,7 +26,7 @@
                         <li><h1>{{hero.name}}
                             <a href="{% url 'superheroes:detail' hero.id %}">View Details</a> 
                             <a href="{% url 'superheroes:update' hero.id %}">Update</a>
-                            <a href="{% url 'superheroes:delete' hero.id %}" target="popup" onClick="window.open('{% url 'superheroes:delete' hero.id %}','popup','width=400, height=100')">
+                            <a href="{% url 'superheroes:delete' hero.id %}" target="popup" onClick="window.open('{% url 'superheroes:delete' hero.id %}','popup','width=400, height=150, top=500, left=500')">
                             Delete Hero</a></h1></li>
                         {% endfor %}
                     </ul>

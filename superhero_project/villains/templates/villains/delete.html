@@ -19,17 +19,12 @@
             <div class="row">
                 <form action ="{% url 'villains:delete' single_villain.id %}" method="post">
                     {% csrf_token %}
-                    <input class="btn btn-danger button" type="submit" value="Yes"> 
+                    <input class="btn btn-danger button center" type="submit" value="Yes" name="Delete" id='Delete'>
                     <!-- adding space between yes and cancel -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="button" href="{% url 'superheroes:index' %}">Cancel</a>
+                    <input class="btn btn-danger button center" type="submit" value="No" name="Delete" id='Cancel'>
                 </form>
     
         </div>
-
-        <div class="row">
-            <p><a class="button" href="{% url 'superheroes:index' %}">Back to Home</a></p>
-        </div>
-    </div>
 
     </body>
 </html>
