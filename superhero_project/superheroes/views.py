@@ -44,10 +44,14 @@ def create(request):
 
 def delete(request, hero_id):
     if request.method == "POST":
-        single_hero = Superhero.objects.get(pk=hero_id)
-        single_hero.delete()
-    
-        return HttpResponseRedirect(reverse('superheroes:index'))
+        delete = request.POST.get('Delete')
+        if delete == 'Yes':
+            single_hero = Superhero.objects.get(pk=hero_id)
+            single_hero.delete()
+            return HttpResponse('<script type="text/javascript">window.close(); window.opener.location.reload();</script>')
+        
+        else:
+            return HttpResponse('<script type="text/javascript">window.close();</script>')
     
     else:
         single_hero = Superhero.objects.get(pk=hero_id)
